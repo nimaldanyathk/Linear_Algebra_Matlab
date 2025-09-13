@@ -1,0 +1,87 @@
+A=[4,-2,1;2,4,-2;1,-2,3]
+[eigenvectors, eigenvalues]=eig(A);
+syms lambda;
+Char_poly=det(A-lambda*eye(size(A)));
+
+
+%plot the characteristics polynomial
+fplot(Char_poly,[-10,10])
+
+
+%Given a  matrix A=[4,1;2,3]; 1. Find the eigen values of the matrix A.
+%2. Find the eigenvectors   3. Verify the eigen value and, eigen vector
+%relationship Av=lambda V  4. Find the characteristic polynomial
+A = [4 1; 2 3];
+
+[eigenVectors, eigenValues] = eig(A);
+
+disp('Eigenvalues:');
+disp(diag(eigenValues));
+
+% Display eigenvectors
+disp('Eigenvectors:');
+disp(eigenVectors);
+
+% Given matrix A
+A = [4 1; 2 3];
+
+% Eigenvalues and eigenvectors
+[V, D] = eig(A);
+
+% Verification of Av = λv (Directly)
+Av1 = A * V(:, 1);          % For λ1
+lambdaV1 = D(1, 1) * V(:, 1);
+
+Av2 = A * V(:, 2);          % For λ2
+lambdaV2 = D(2, 2) * V(:, 2);
+
+% Display results
+disp('Verification of Av = λv:');
+
+disp('For λ1:');
+disp('A * v1 = ');
+disp(Av1);
+disp('λ1 * v1 = ');
+disp(lambdaV1);
+
+disp('For λ2:');
+disp('A * v2 = ');
+disp(Av2);
+disp('λ2 * v2 = ');
+disp(lambdaV2);
+
+syms lambda;
+charPoly = det(A - lambda * eye(2));
+
+disp('Characteristic Polynomial:');
+disp(charPoly);
+
+
+
+A = [2 4; 0 -2];
+B = [2 0; -4 -2];
+P = [2 -2; 2 2];
+
+% Calculate C = inv(P) * (A * P)
+C = inv(P) * (A * P);
+
+% Check similarity
+if isequal(C, B)  % Correct method to compare matrices
+    disp('They are similar matrices (A and B)');
+else
+    disp('Not similar');
+end
+
+
+%Find the matirx B if A and B are similar matrices. If
+
+% Given matrices
+A = [1 2; 3 -1];
+P = [0 1; 2 3];
+
+% Finding matrix B using the similarity transformation formula
+B = inv(P) * (A * P);
+
+% Display the result
+disp('Matrix B is:');
+disp(B);

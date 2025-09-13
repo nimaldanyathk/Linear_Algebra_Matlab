@@ -1,0 +1,14 @@
+clc;
+clear all;
+close all;
+v=[4;3];
+figure;
+hold on;
+grid on;
+quiver(0,0,v(1),v(2),0,'r','LineWidth',2,'MaxHeadSize',0.5);
+xlabel("X-Axis");
+ylabel("Y-Axis");
+xlim([-5 5]);
+ylim([-5 5]);
+legend("vector");
+axis equal;
